@@ -6,6 +6,7 @@
     "noUncheckedIndexedAccess": true,
     "noImplicitReturns": true,
     "strict": true,
+    "baseUrl": "src",
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,

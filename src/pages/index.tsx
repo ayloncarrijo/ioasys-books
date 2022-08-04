@@ -1,4 +1,4 @@
-import type { AppPage } from "../types";
+import type { AppPage } from "types";
 
 const Home: AppPage = () => {
   return (

@@ -38,6 +38,7 @@
     "react/react-in-jsx-scope": "off",
     "react/self-closing-comp": "error",
     "no-console": "warn",
-    "eqeqeq": ["error", "smart"]
+    "eqeqeq": ["error", "smart"],
+    "prefer-destructuring": ["error", { "object": true, "array": false }]
   }
 }

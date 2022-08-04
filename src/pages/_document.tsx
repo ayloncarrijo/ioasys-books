@@ -12,13 +12,13 @@ class MyDocument extends Document {
   public static async getInitialProps(
     ctx: DocumentContext
   ): Promise<DocumentInitialProps> {
-    const originalRenderPage = ctx.renderPage;
-
     const styleSheet = new ServerStyleSheet();
+
+    const { renderPage } = ctx;
 
     try {
       ctx.renderPage = () =>
-        originalRenderPage({
+        renderPage({
           enhanceApp: (App) => (props) =>
             styleSheet.collectStyles(<App {...props} />),
         });
