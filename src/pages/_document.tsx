@@ -42,7 +42,7 @@ class MyDocument extends Document {
   public render() {
     return (
       <Html>
-        <Head>
+        <Head lang="pt-br">
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
             rel="preconnect"

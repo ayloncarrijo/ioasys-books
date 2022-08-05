@@ -19,6 +19,23 @@ const handleBreakpoints = (value, consumer = (style) => style) => {
 module.exports = {
   content: [],
   theme: {
+    spacing: {
+      0: "0px",
+      1: "1px",
+      ...Object.fromEntries(
+        Array(256)
+          .fill(null)
+          .map((_, i) => [(i + 1) * 4, `${((i + 1) * 4) / 16}rem`])
+      ),
+    },
+    screens: {
+      xs: "480px",
+      sm: "576px",
+      md: "768px",
+      lg: "992px",
+      xl: "1200px",
+      "2xl": "1400px",
+    },
     container: {
       DEFAULT: {
         maxWidth: 1136,
@@ -30,7 +47,6 @@ module.exports = {
         DEFAULT: {
           fontFamily: "Heebo",
           fontStyle: "normal",
-          fontWeight: "500",
           fontSize: "28px",
           lineHeight: "40px",
         },
@@ -39,7 +55,6 @@ module.exports = {
         DEFAULT: {
           fontFamily: "Heebo",
           fontStyle: "normal",
-          fontWeight: "500",
           fontSize: "14px",
           lineHeight: "20px",
         },
@@ -48,7 +63,6 @@ module.exports = {
         DEFAULT: {
           fontFamily: "Heebo",
           fontStyle: "normal",
-          fontWeight: "400",
           fontSize: "16px",
           lineHeight: "24px",
         },
@@ -57,13 +71,28 @@ module.exports = {
         DEFAULT: {
           fontFamily: "Heebo",
           fontStyle: "normal",
-          fontWeight: "400",
           fontSize: "12px",
           lineHeight: "16px",
         },
       },
     },
-    extend: {},
+    colors: {
+      white: "#fff",
+      black: "#000",
+      transparent: "transparent",
+      current: "currentColor",
+    },
+    extend: {
+      colors: {
+        "lighter-black": "#333333",
+        "darker-pink": "#B22E6F",
+        "lighter-pink": "#AB2680",
+      },
+      maxWidth: (theme) => theme("width"),
+      maxHeight: (theme) => theme("height"),
+      minWidth: (theme) => theme("width"),
+      minHeight: (theme) => theme("height"),
+    },
   },
   corePlugins: {
     container: false,
