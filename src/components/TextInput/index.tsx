@@ -32,7 +32,7 @@ function TextInput({
         {label && (
           <label
             htmlFor={props.id}
-            tw="mb-4 inline-flex typography-body2 opacity-50"
+            tw="mb-4 block typography-body2 opacity-50 cursor-text"
           >
             {label}
           </label>

@@ -38,7 +38,7 @@ module.exports = {
     },
     container: {
       DEFAULT: {
-        maxWidth: 1136,
+        maxWidth: 1168,
         padding: "1rem",
       },
     },
@@ -84,14 +84,40 @@ module.exports = {
     },
     extend: {
       colors: {
+        gray: "#999999",
         "lighter-black": "#333333",
         "darker-pink": "#B22E6F",
         "lighter-pink": "#AB2680",
+      },
+      boxShadow: {
+        card: "0px 6px 24px rgba(84, 16, 95, 0.13)",
+        "card-hover": "0px 16px 80px rgba(84, 16, 95, 0.32)",
+      },
+      dropShadow: {
+        book: "0px 6px 9px rgba(0, 0, 0, 0.15)",
       },
       maxWidth: (theme) => theme("width"),
       maxHeight: (theme) => theme("height"),
       minWidth: (theme) => theme("width"),
       minHeight: (theme) => theme("height"),
+      gridTemplateColumns: (theme) =>
+        Object.fromEntries(
+          Object.entries(theme("width"))
+            .map(([key, value]) => [
+              [`auto-fit-${key}`, `repeat(auto-fit, minmax(${value}, 1fr))`],
+              [`auto-fill-${key}`, `repeat(auto-fill, minmax(${value}, 1fr))`],
+            ])
+            .flat()
+        ),
+      gridTemplateRows: (theme) =>
+        Object.fromEntries(
+          Object.entries(theme("height"))
+            .map(([key, value]) => [
+              [`auto-fit-${key}`, `repeat(auto-fit, minmax(${value}, 1fr))`],
+              [`auto-fill-${key}`, `repeat(auto-fill, minmax(${value}, 1fr))`],
+            ])
+            .flat()
+        ),
     },
   },
   corePlugins: {
@@ -124,5 +150,6 @@ module.exports = {
         },
       });
     },
+    require("@tailwindcss/line-clamp"),
   ],
 };
