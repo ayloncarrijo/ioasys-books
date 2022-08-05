@@ -21,7 +21,7 @@ const Login: AppPage = () => {
           <form tw="w-full grid gap-16 sm:w-368">
             <TextInput
               type="email"
-              label="Email"
+              label="E-mail"
               value="books@ioasys.com.br"
               onChange={() => {
                 //
@@ -40,7 +40,7 @@ const Login: AppPage = () => {
 
           <div tw="absolute pt-16">
             <SpeechBubble>
-              <p>Email e/ou senha incorretos.</p>
+              <p>E-mail e/ou senha incorretos.</p>
             </SpeechBubble>
           </div>
         </div>

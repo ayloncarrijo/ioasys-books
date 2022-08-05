@@ -7,12 +7,14 @@ interface LogoProps {
 
 function Logo({ variant = "white" }: LogoProps): JSX.Element {
   return (
-    <div
-      tw="inline-flex items-center gap-16 select-none"
-      css={variant === "white" ? tw`text-white` : tw`text-lighter-black`}
-    >
-      <IoasysLogo tw="w-full h-36" />
-      <span tw="typography-title1 font-thin">Books</span>
+    <div tw="leading-none">
+      <div
+        tw="inline-flex items-center gap-16 select-none"
+        css={variant === "white" ? tw`text-white` : tw`text-lighter-black`}
+      >
+        <IoasysLogo tw="w-full h-36" />
+        <span tw="typography-title1 font-thin">Books</span>
+      </div>
     </div>
   );
 }
