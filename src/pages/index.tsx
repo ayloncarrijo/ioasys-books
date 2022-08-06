@@ -3,6 +3,8 @@ import Container from "components/Container";
 import Pagination from "components/Pagination";
 import Header from "containers/Header";
 import useBreakpoint from "hooks/useBreakpoint";
+import getUser from "middlewares/getUser";
+import type { GetServerSideProps } from "next";
 import { useState } from "react";
 import "twin.macro";
 import { theme } from "twin.macro";
@@ -145,4 +147,7 @@ const Home: AppPage = () => {
   );
 };
 
+const getServerSideProps: GetServerSideProps = getUser;
+
+export { getServerSideProps };
 export default Home;

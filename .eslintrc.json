@@ -29,7 +29,10 @@
               "does"
             ]
           }
-        ]
+        ],
+        "@typescript-eslint/no-misused-promises": "off",
+        "@typescript-eslint/no-floating-promises": "off",
+        "@typescript-eslint/require-await": "off"
       }
     }
   ],
@@ -56,6 +59,7 @@
   ],
   "rules": {
     "object-curly-spacing": ["error", "always"],
+    "object-shorthand": ["error", "always"],
     "no-console": "warn",
     "eqeqeq": ["error", "smart"],
     "prefer-destructuring": ["error", { "object": true, "array": false }],

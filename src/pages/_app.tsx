@@ -1,9 +1,11 @@
 import GlobalStyles from "components/GlobalStyles";
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import UserProvider from "providers/UserProvider";
 import type {} from "styled-components/cssprop";
+import type { User } from "types/api";
 
-function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps: { user, ...pageProps } }: AppProps) {
   return (
     <>
       <GlobalStyles />
@@ -12,7 +14,9 @@ function App({ Component, pageProps }: AppProps) {
         <title>Ioasys Books</title>
       </Head>
 
-      <Component {...pageProps} />
+      <UserProvider user={user as User}>
+        <Component {...pageProps} />
+      </UserProvider>
     </>
   );
 }
