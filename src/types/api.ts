@@ -17,6 +17,7 @@ export interface Book {
   language: string;
   publisher: string;
   published: number;
+  pageCount: number;
 }
 
 export enum BookCategory {
@@ -39,3 +40,10 @@ export enum BookCategory {
   POETRY = "Poesia",
   ANOTHER_SUBJECTS = "Outros Assuntos",
 }
+
+export type Paginated<T> = {
+  data: Array<T>;
+  page: number;
+  totalItems: number;
+  totalPages: number;
+};

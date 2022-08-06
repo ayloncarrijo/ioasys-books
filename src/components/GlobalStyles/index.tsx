@@ -5,6 +5,10 @@ const CustomStyles = createGlobalStyle`
   body {
     ${tw`typography-body2 text-lighter-black`}
   }
+
+  .is-modal-open {
+    ${tw`overflow-hidden`}
+  }
 `;
 
 function GlobalStyles(): JSX.Element {

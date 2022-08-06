@@ -40,7 +40,7 @@ function TextInput({
 
         <input
           ref={inputRef}
-          tw="w-full typography-body1 bg-transparent outline-none"
+          tw="w-full typography-body1 bg-transparent outline-none placeholder:(text-white opacity-50)"
           {...props}
         />
       </div>

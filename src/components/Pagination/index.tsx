@@ -35,7 +35,12 @@ function Pagination({
   const pageInfo = (
     <p tw="typography-body2">
       Página <span tw="font-medium">{currentPage}</span> de{" "}
-      <span tw="font-medium">{totalPages}</span>
+      <button
+        onClick={() => onPageChange(totalPages)}
+        tw="font-medium hover:underline"
+      >
+        {totalPages}
+      </button>
     </p>
   );
 

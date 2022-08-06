@@ -12,9 +12,9 @@ import { AppPage, Status } from "types";
 import AppUtil from "utils/AppUtil";
 
 const SignIn: AppPage = () => {
-  const [email, setEmail] = useState("desafio@ioasys.com.br");
+  const [email, setEmail] = useState("");
 
-  const [password, setPassword] = useState("12341234");
+  const [password, setPassword] = useState("");
 
   const [status, setStatus] = useState(Status.IDLE);
 
@@ -54,6 +54,7 @@ const SignIn: AppPage = () => {
               type="email"
               label="E-mail"
               required
+              placeholder="Insira seu e-mail"
             />
             <TextInput
               value={password}
@@ -61,6 +62,7 @@ const SignIn: AppPage = () => {
               type="password"
               label="Senha"
               required
+              placeholder="Insira sua senha"
               endComponent={
                 <Button type="submit" isLoading={status === Status.LOADING}>
                   Entrar
